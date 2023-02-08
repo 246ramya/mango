@@ -1,0 +1,26 @@
+class Base:
+    def __init__(self):
+        self.a=10
+        self.b=20
+    def display(self):
+        print("print the values")
+        print(f"a={self.a} b={self.b}")
+        
+        
+class Drived(Base):
+    def __init__(self):
+        Base.__init__(self)
+        self.d=30
+    def display(self):
+        Base.display(self)
+        print(f"{self.d}")
+    def __add__(self,ob):
+        return self.a + ob.a + self.d + ob.d
+
+    
+obj2=Drived()
+obj3=Drived()
+
+obj2.display()
+obj3.display()
+print("the sum of",obj2+obj3)

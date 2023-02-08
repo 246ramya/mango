@@ -1,0 +1,53 @@
+import numpy as np
+arr1 = np.array([[1, 2, 3], [4, 5, 6]])
+arr2 = np.array([[7, 8, 9], [10, 11, 12]])
+print("concatenating two arrays \n",np.concatenate([arr1, arr2], axis=1))     #columnwise concatenation
+print("vertical stacking  \n",np.vstack((arr1, arr2)))                      #Stack arrays in sequence vertically (row wise).
+print("horizontal stacking \n",np.hstack((arr1,arr2)))
+
+
+arr = np.array([1, 2, 3, 4, 5, 4, 4])
+x = np.where(arr == 4)
+print(x)
+
+arr = np.array([6, 7, 8, 9])
+x = np.searchsorted(arr, 5)
+print(x)
+
+arr = np.array([1, 3, 5, 7])
+x = np.searchsorted(arr, [2, 4, 6])
+print(x)
+
+
+a = np.array([[1,4],[3,1]])
+print("sorted array : ",np.sort(a))                
+print("\n sorted flattened array:", np.sort(a, axis=0))    
+x = np.array([3, 1, 2])
+
+print("\n indices that would sort an array",np.argsort(x))
+
+print("\n sorting complex number :" ,np.sort_complex([5, 3, 6, 2, 1]))
+
+
+
+
+
+import numpy as np
+
+x = np.arange(9.0)
+print(np.split(x, 3))               
+print(np.split(x, [3, 5, 6, 10]))  
+
+x = np.arange(9)
+np.array_split(x, 4)               
+
+
+
+a = np.array([[1, 3, 5, 7, 9, 11],
+              [2, 4, 6, 8, 10, 12]])
+  
+# horizontal splitting
+print("Splitting along horizontal axis into 2 parts:\n", np.hsplit(a, 2))
+  
+# vertical splitting
+print("\nSplitting along vertical axis into 2 parts:\n", np.vsplit(a, 2))
